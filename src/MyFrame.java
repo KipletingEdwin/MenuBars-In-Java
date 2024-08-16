@@ -4,6 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MyFrame extends JFrame implements ActionListener {
+    JMenuItem loadItem;
+    JMenuItem saveItem;
+    JMenuItem exitItem;
+    JMenu fileMenu;
+    JMenu editMenu;
+    JMenu helpMenu;
 
     MyFrame(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -12,13 +18,17 @@ public class MyFrame extends JFrame implements ActionListener {
 
         JMenuBar menuBar = new JMenuBar();
 
-        JMenu fileMenu = new JMenu("File");
-        JMenu editMenu = new JMenu("Edit");
-        JMenu helpMenu = new JMenu("Help");
+        fileMenu = new JMenu("File");
+        editMenu = new JMenu("Edit");
+        helpMenu = new JMenu("Help");
 
-        JMenuItem loadItem = new JMenu("Load");
-        JMenuItem saveItem = new JMenu("Save");
-        JMenuItem exitItem = new JMenu("Exit");
+        loadItem = new JMenuItem("Load");
+        saveItem = new JMenuItem("Save");
+        exitItem = new JMenuItem("Exit");
+
+        loadItem.addActionListener(this);
+        saveItem.addActionListener(this);
+        exitItem.addActionListener(this);
 
         fileMenu.add(loadItem);
         fileMenu.add(saveItem);
@@ -29,15 +39,21 @@ public class MyFrame extends JFrame implements ActionListener {
         menuBar.add(editMenu);
         menuBar.add(helpMenu);
 
-
         this.setJMenuBar(menuBar);
+
         this.setVisible(true);
     }
 
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==loadItem){
+            System.out.println("You loaded a file");
+        } else if (e.getSource()==saveItem) {
+            System.out.println("You saved a file");
+        } else if (e.getSource()==exitItem) {
+            System.exit(0);
+
+        }
 
     }
 }
