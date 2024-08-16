@@ -11,6 +11,8 @@ public class MyFrame extends JFrame implements ActionListener {
         this.setLayout(new FlowLayout());
 
         JMenuBar menuBar = new JMenuBar();
+
+        this.setJMenuBar(menuBar);
         this.setVisible(true);
     }
 
