@@ -33,6 +33,7 @@ public class MyFrame extends JFrame implements ActionListener {
 
         fileMenu.setMnemonic(KeyEvent.VK_F);   //Alt + f for file
         editMenu.setMnemonic(KeyEvent.VK_E);   //Alt + e for edit
+        helpMenu.setMnemonic(KeyEvent.VK_H);   //Alt + f for help
 
         loadItem.setMnemonic(KeyEvent.VK_L);   //L for load
         saveItem.setMnemonic(KeyEvent.VK_S);   //S for save
