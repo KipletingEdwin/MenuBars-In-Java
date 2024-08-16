@@ -16,6 +16,10 @@ public class MyFrame extends JFrame implements ActionListener {
         JMenu editMenu = new JMenu("Edit");
         JMenu helpMenu = new JMenu("Help");
 
+        menuBar.add(fileMenu);
+        menuBar.add(editMenu);
+        menuBar.add(helpMenu);
+
 
         this.setJMenuBar(menuBar);
         this.setVisible(true);
